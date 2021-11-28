@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1 class="title">Things I have to to</h1>
+    <div class="all-tasks">
+        <h2 class="task-list-title">My Lists</h2>
+        <ul class="task-list">
+            <li class="active-list">University Stuff</li>
+            <li>Work</li>
+            <li>Daily Errands</li>
+        </ul>
+
+        <form action="">
+            <input 
+            type="text" 
+            class="new list" 
+            placeholder="new list name"
+            aria-label="new list name"
+            >
+
+            <button class="btn list" aria-label="new list label">+</button>
+        </form>
+    </div>
+    <div class="todo-list">
+        <div class="todo-header">
+            <h2 class="list-title">University</h2>
+            <p class="task-count">3 tasks remaining</p>
+        </div>
+
+        <div class="todo-body">
+            <div class="tasks">
+                <div class="task">
+                    <input type="checkbox" id="task-1">
+                    <label for="task-1">
+                        <span class="custom-checkbox"></span>
+                        Study logic circuits
+                    </label>
+                </div>
+                
+                <div class="task">
+                    <input type="checkbox" id="task-2">
+                    <label for="task-2">
+                        <span class="custom-checkbox"></span>
+                        Study DS
+                    </label>
+                </div>
+
+                <div class="task">
+                    <input type="checkbox" id="task-3">
+                    <label for="task-3">
+                        <span class="custom-checkbox"></span>
+                        EEC homework
+                    </label>
+                </div>
+            </div>
+            <div class="new-task-creator">
+                <form action="">
+                    <input 
+                    type="text" 
+                    class="new task" 
+                    placeholder="new task name"
+                    aria-label="new task name"
+                    >
+
+                    <button class="btn task" aria-label="new list label">+</button>
+                </form>
+            </div>
+
+            <div class="task-remover">
+                <button class="btn delete">Clear completed task</button>
+                <button class="btn delete">Delete list</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
