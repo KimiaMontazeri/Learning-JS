@@ -33,7 +33,7 @@ form {
     font-weight: 900;
     color: rgba(0, 0, 0, 0.2);
     letter-spacing: 2px;
-    margin: -0.3em 0 0.5em;
+    margin: -0.3em 0 0.2em;
 }
 
 .all-tasks {
@@ -122,7 +122,7 @@ form {
 .todo-list {
     /* locally scoped custom property */
     --spacer: 2rem;
-    
+    border-radius: 30px;
     margin-left: 100px;
     grid-area: active;
     background: var(--clr-light);
@@ -130,6 +130,8 @@ form {
 }
 
 .todo-header {
+    margin: 30px;
+    border-radius: 15px;
     padding: var(--spacer);
     background: #e4e4e4;
     /* places the title and the count next to each other */
@@ -143,6 +145,7 @@ form {
 }
 
 .task-count {
+    text-align: center;
     margin: 0;
     font-size: 0.75rem;
 }
