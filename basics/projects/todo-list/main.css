@@ -1,0 +1,259 @@
+:root {
+    --clr-primary: rgb(54, 112, 199);
+    --clr-light: #f4f4f4;
+    --clr-dark: #333;
+    --clr-warning: rgb(99, 36, 36);
+}
+
+*,
+*::before,
+*::after {
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+    display: grid;
+    grid: "header header header header" auto "...... lists  active ......" auto/1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+}
+
+form {
+    display: flex;
+}
+
+.title {
+    grid-area: header;
+    text-align: center;
+    font-size: calc(7vw + 1rem);
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+    margin: -0.3em 0 0.5em;
+}
+
+.all-tasks {
+    grid-area: lists;
+} 
+
+.task-list {
+    /* font-size: 1.2rem; */
+    line-height: 1.7;
+    list-style: circle;
+    padding-left: 1.1em;
+}
+
+.task-list-title{
+    font-size: 1.8rem;
+}
+
+.list-name {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.list-name:hover {
+    opacity: 0.6;
+}
+
+/* customizing the input fields */
+.new {
+    background: transparent; 
+    border: 0;
+    color: inherit;
+    border-bottom: 1px solid currentColor;
+    font-size: inherit;
+    padding: 0.25em;
+    /* remove the outline when the user clicks on it */
+    outline: none;
+    transition: border-bottom 250ms ease-in;
+}
+
+.new::placeholder {
+    /* font-size: x-small; */
+    color: #A9A9A9;
+    opacity: 0.6;
+}
+
+.new:focus {
+    outline: none;
+    border-bottom-width: 3px;
+}
+
+.new:focus::placeholder {
+    opacity: 0.2;
+}
+
+.new.list {
+    font-size: 1.2rem;
+}
+
+.new.task {
+    margin-bottom: 0;
+}
+
+.btn {
+    cursor: pointer;
+    /* getting rid of some default values */
+    background: 0;
+    border: 0;
+    padding: 0;
+    color: inherit;
+}
+
+.btn.create {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-left: 0.25rem;
+}
+
+.btn.create:hover {
+    opacity: 0.6;
+}
+
+.active-list {
+    font-weight: 900;
+}
+
+.todo-list {
+    /* locally scoped custom property */
+    --spacer: 2rem;
+    
+    margin-left: 100px;
+    grid-area: active;
+    background: var(--clr-light);
+    color: var(--clr-dark);
+}
+
+.todo-header {
+    padding: var(--spacer);
+    background: #e4e4e4;
+    /* places the title and the count next to each other */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list-title {
+    margin: 0 1rem 0 0;
+}
+
+.task-count {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.todo-body {
+    padding: var(--spacer);
+    position: relative;
+}
+
+/* change the color of the right plus sign */
+.new-task-creator .create {
+    color: var(--clr-primary);
+}
+
+[type="checkbox"] {
+    /* removes the checkboxes, position: absolute will fill the empty field on the left */
+    opacity: 0;
+    position: absolute;
+}
+
+.custom-checkbox {
+    --size: .75em;
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+    margin-right: var(--size);
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+}
+
+/* this will allow the user to use tab to focus on each checkbox */
+.task:hover .custom-checkbox, [type="checkbox"]:focus + label .custom-checkbox {
+    transform: scale(1.3);
+    color: var(--clr-primary);
+}
+
+[type="checkbox"]:checked + label .custom-checkbox {
+    background: var(--clr-primary);
+    border-color: var(--clr-primary);
+    /* kinda creates another border but this one is white instead of primary */
+    box-shadow: inset 0 0 0px 2px white;
+    /* box-shadow: 0 0 2px whitesmoke; */
+}
+
+[type="checkbox"]:checked + label {
+    opacity: 0.5;
+}
+
+.task {
+    position: relative;
+    margin-bottom: 1.25em;
+}
+
+.task label {
+    /* display: flex; */
+    display: inline-flex; 
+    align-items: center;
+    position: relative;
+}
+
+.task label::after {
+    content: '';
+    position: absolute;
+    
+    /* right: 0;
+    left: 0;
+    bottom: -50%;
+    height: 2px;
+    background: currentColor;
+    opacity: 0.07; */
+
+    /* creating a custom "strikethrough" (bc i want to apply some animation to it) */
+    left: 1.5em;
+    right: 0;
+    top: calc(50% - 1.5px);
+    height: 3px;
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 150ms ease-in-out;
+}
+
+[type="checkbox"]:checked + label::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* the two buttons down below */
+.task-remover {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute; /* so that i can move it a little bit */
+    width: 100%;
+    left: 0;
+    bottom: -35px; /* i could use top too, but it's harder */
+}
+
+.btn.delete {
+    color: var(--clr-light);
+    opacity: 0.7;
+    font-size: 0.7rem;
+    transition: color 200ms;
+}
+
+.btn.delete:hover {
+    color: var(--clr-warning);
+    opacity: 0.6;
+    font-size: 0.7rem;
+}
