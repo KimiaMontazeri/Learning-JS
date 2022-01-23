@@ -61,9 +61,10 @@
                 
             </div>
             <div class="new-task-creator">
-                <form action="">
+                <form action="" data-new-task-form> 
                     <input 
                     type="text" 
+                    data-new-task-input
                     class="new task" 
                     placeholder="new task name"
                     aria-label="new task name"
@@ -79,7 +80,7 @@
         </div>
     </div>
 
-    <!-- generic task template to be used in javascript. it won't get displayed -->
+    <!-- generic task template to be used in javascript. It won't get displayed on the page -->
     <template id="task-template">
         <div class="task">
             <input type="checkbox">
