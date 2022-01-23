@@ -1,0 +1,59 @@
+.topnav {
+    height: 100px;
+    background: linear-gradient(to right, white, gray);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+}
+
+.topnav a {
+    float: inline-end;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    text-decoration: wavy;
+    font-size: large;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+.topnav a:hover {
+    cursor: pointer;
+    color: #BF5FFF;
+}
+
+.topnav a.active {
+    font-weight: bold;
+}
+
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;    
+}
+
+p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    text-align: center;
+    padding: 30px;
+    height: 100px;
+    width: 340px;
+}
+
+form {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    
+}
+
+footer {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-small;
+    background-color: #BF5FFF;
+}
