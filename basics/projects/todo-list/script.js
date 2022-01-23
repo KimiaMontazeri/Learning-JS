@@ -52,6 +52,19 @@ listsContainer.addEventListener('click', e => {
     }
 })
 
+tasksContainer.addEventListener('click', e => {
+    if (e.target.tagName.toLowerCase() === 'input') { // the checkbox is clicked
+        const selectedList = lists.find(list => list.id === selectedListId)
+        const selectedTask = selectedList.tasks.find(task => task.id === e.target.id)
+        // we have set the checkbox id to the task's id beforehand
+        selectedTask.complete = e.target.checked
+
+        save()
+        renderTaskCount(selectedList)
+        // no need to saveAndRender
+    }
+})
+
 deleteListButton.addEventListener('click', e => {
     lists = lists.filter(list => list.id !== selectedListId)
     selectedListId = null
@@ -84,7 +97,7 @@ function render() {
     if (selectedListId == null) {
         listDisplayContainer.style.display = 'none'
     } else {
-        listDisplayContainer.style.display = '' // revert it back to what is was 
+        listDisplayContainer.style.display = '' // revert it back
         listTitleElement.innerText = selectedList.name
         renderTaskCount(selectedList)
         clearElement(tasksContainer)
