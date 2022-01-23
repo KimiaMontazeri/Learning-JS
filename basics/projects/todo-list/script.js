@@ -9,6 +9,7 @@ const tasksContainer       = document.querySelector('[data-tasks]')
 const taskTemplate         = document.getElementById('task-template')
 const newTaskForm          = document.querySelector('[data-new-task-form]')
 const newTaskInput         = document.querySelector('[data-new-task-input]')
+const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
 
 // store the user's data in the browser (local storage)
 // making a namespace prevents you from overwriting the info that is already in the storage, or preventing other websites from overwriting this local storage
@@ -68,6 +69,12 @@ tasksContainer.addEventListener('click', e => {
 deleteListButton.addEventListener('click', e => {
     lists = lists.filter(list => list.id !== selectedListId)
     selectedListId = null
+    saveAndRender()
+})
+
+clearCompleteTasksButton.addEventListener('click', e => {
+    const selectedList = lists.find(list => list.id === selectedListId)
+    selectedList.tasks = selectedList.tasks.filter(task => !task.complete)
     saveAndRender()
 })
 
