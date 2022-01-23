@@ -61,6 +61,7 @@ function save() {
 function render() {
     clearElement(listsContainer)
     renderList()
+
     const selectedList = lists.find(list => list.id === selectedListId)
     if (selectedListId == null) {
         listDisplayContainer.style.display = 'none'
@@ -88,6 +89,16 @@ function renderList() {
 
 function renderTasks(selectedList) {
     selectedList.tasks.forEach(task => {
+        // use a template 
+        const taskElement = document.importNode(
+            taskTemplate.content, true)
+        const checkbox = taskElement.querySelector('input')
+        checkbox.id = task.id
+        checkbox.checked = task.complete
+        const label = taskElement.querySelector('label')
+        label.htmlFor = task.id // ???
+        label.append(task.name)
+        tasksContainer.appendChild(taskElement)
     })
 }
 
