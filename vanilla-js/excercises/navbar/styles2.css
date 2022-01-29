@@ -20,10 +20,12 @@ body {
 .navbar-title {
     font-size: 2rem;
     margin: .5rem;
+    margin-left: 5rem;
 }
 
 .navbar-links ul {
     margin: 0;
+    margin-right: 3.5rem;
     padding: 0;
     display: flex;
 }
@@ -53,6 +55,7 @@ body {
     justify-content: space-between;
     width: 30px;
     height: 20px;
+    margin-right: 3.5rem;
 }
 
 .toggle-btn .bar {
