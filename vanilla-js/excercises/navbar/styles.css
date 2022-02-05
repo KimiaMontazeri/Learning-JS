@@ -1,20 +1,42 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+}
+
+.navbar-container {
+    margin: 40px;
+}
+
 .topnav {
     height: 100px;
-    background: linear-gradient(to right, white, gray);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(to right, black, gray);
     overflow: hidden;
     text-align: center;
-    padding: auto;
-    margin: auto;
+    /* padding: auto; */
+    /* border: 20px; */
+    position: sticky;
+    top: 0;
 }
 
 .topnav a {
-    float: inline-end;
     color: black;
-    text-align: center;
-    padding: 20px;
+    padding: 2%;
+    margin: 0;
     text-decoration: wavy;
-    font-size: large;
+    font-size: 25px;
+}
+
+.topnav a:hover {
+    cursor: pointer;
+    color: #808080;
+    background-color: black;
+}
+
+hr {
+    width: 25%;
+    height: 0px;
+    border-style: ridge;
+    color: #8080809c;
 }
 
 img {
@@ -22,38 +44,29 @@ img {
     height: 30px;
 }
 
-.topnav a:hover {
-    cursor: pointer;
-    color: #BF5FFF;
-}
-
-.topnav a.active {
+a.active {
     font-weight: bold;
 }
 
 h2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;    
 }
 
 p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: small;
     text-align: center;
-    padding: 30px;
+    /* align-content: center; */
+    padding: 30px 32% 30px 32%;
     height: 100px;
     width: 340px;
-}
-
-form {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    
+    color: white;
 }
 
 footer {
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: x-small;
-    background-color: #BF5FFF;
+    width: 20%;
+    padding: 10px;
+    margin: 30px 39% 30px 39%;
+    background-color: #808080;
 }
