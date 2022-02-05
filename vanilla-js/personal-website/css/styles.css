@@ -10,6 +10,11 @@ body {
 }
 
 .navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,9 +104,69 @@ body {
 }
 
 .top-container {
-    margin-left: 5rem;
+    background-image: url("/vanilla-js/personal-website/images/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 800px;
 }
 
-.top-container p {
-    font-size: 22px;
+.text h1, .text p {
+    margin: 5rem;
+    margin-bottom: 0;
+    font-size: 90px;
+    color: white;
+}
+
+.text p {
+    font-size: 40px;
+}
+
+.heading {
+    color: #7987c9;
+    font-size: 50px;
+    text-decoration: underline;
+}
+
+.about-me {
+    margin: 5rem;
+    font-size: 30px;
+    justify-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.skills, .projects {
+    background-color: #AEAEAE;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 30px;
+    border-radius: 25px;
+    font-size: 30px;
+    justify-items: center;
+}
+
+.projects a {
+    color: black;
+}
+
+.projects-table td th {
+    padding: 40px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* .project-title {
+    background-color: #f4eb9e;
+    color: black;
+} */
+
+hr {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5rem;
+    border-color: #AEAEAE;
+    border-style: solid;
 }
