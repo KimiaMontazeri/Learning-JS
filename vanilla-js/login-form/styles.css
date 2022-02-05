@@ -10,12 +10,12 @@ body {
     display: grid;
     height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 
 .wrapper {
     background-color: #000000;
     margin: 10% 30%;
-    width: 50%;
     border-radius: 1.5%;
     overflow: hidden;
     box-shadow: 0px 15px 20px rgba(0,0,0,0.5);
@@ -43,40 +43,60 @@ body {
 }
 
 .form-container {
-    margin: 10% 30%;
-    /* width: 50%; */
-    display: inline-block;
-    justify-content: space-between;
+    height: 10%;
+    width: 40%;
+    /* display: inline-block;
+    justify-content: space-around; */
     
 }
 
 .title {
+    margin-left: 5px;
     color: #7987c9;
     font-size: 25px;
     font-weight: bold;
 }
 
-.field {
-    /* height: 30px;
-    width: 30px; */
-    margin: 10px 0px;
-    border-style: solid;
-    border-color: #7987c9;
-    border-width: .05rem;
-    border-radius: 5%;
-    /* display: none; */
-}
-
 .submit-btn {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
     height: 25px;
     width: 185px;
     background-color: #f4eb9e;
+    color: #000000;
     border-style: none;
     border-radius: 2%;
-    
+}
+
+.submit-btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+input {
+    height: 25px;
+    width: 185px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #7987c9;
+    color: white;
+    outline: none;
+    transition: border-bottom 250ms ease-in;
+    margin: 5px;
+}
+
+input:focus {
+    border-bottom-width: 2.5px;
 }
 
 p {
     color: white;
     font-size: small;
+    margin-left: 5px;
+}
+
+.link {
+    margin-left: 5px;
+    color: #7987c9;
+    font-weight: 1000;
+    font-size: 14px;
 }
