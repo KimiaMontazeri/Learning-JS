@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Inconsolata&display=swap');
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #3d3d3d;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+    background-color: #000000;
+    margin: 10% 30%;
+    width: 50%;
+    border-radius: 1.5%;
+    overflow: hidden;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.5);
+}
+
+.title-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.title-form {
+    margin: 5px;
+    margin-top: 15px;
+    color: #f4eb9e;
+    font-size: 30px;
+}
+
+.title-form:hover {
+    cursor: pointer;
+}
+
+.title-form.active {
+    background-color: #7987c9;
+}
+
+.form-container {
+    margin: 10% 30%;
+    /* width: 50%; */
+    display: inline-block;
+    justify-content: space-between;
+    
+}
+
+.title {
+    color: #7987c9;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.field {
+    /* height: 30px;
+    width: 30px; */
+    margin: 10px 0px;
+    border-style: solid;
+    border-color: #7987c9;
+    border-width: .05rem;
+    border-radius: 5%;
+    /* display: none; */
+}
+
+.submit-btn {
+    height: 25px;
+    width: 185px;
+    background-color: #f4eb9e;
+    border-style: none;
+    border-radius: 2%;
+    
+}
+
+p {
+    color: white;
+    font-size: small;
+}
