@@ -5,6 +5,7 @@ import contacts from './contacts.js'
 
 function createCard(contact) {
   return <Card
+    id= {contact.id}
     name= {contact.name}
     imgURL= {contact.imgURL}
     phone= {contact.phone}
